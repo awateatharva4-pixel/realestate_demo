@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+/* ─── Custom CSS Variables ─── */
+:root {
+    --cream:  #F5F0E8;
+    --gold:   #B8975A;
+    --gold-l: #D4BA7F;
+    --dark:   #0C0B09;
+    --dim:    rgba(245, 240, 232, 0.65);
+    --glass:  rgba(12, 11, 9, 0.55);
+}
+
+/* ─── Base ─── */
+body {
+    background: var(--dark);
+    color: var(--cream);
+    overflow-x: hidden;
+}
+
+/* ─── Loading Screen ─── */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: var(--dark);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.2s ease;
+}
+.load-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    letter-spacing: 8px;
+    color: var(--gold-l);
+    margin-bottom: 40px;
+    text-align: center;
+}
+.load-bar-track {
+    width: 220px;
+    height: 1px;
+    background: rgba(245,240,232,0.15);
+    margin: 0 auto 16px;
+    overflow: hidden;
+}
+.load-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--gold);
+    transition: width 0.1s linear;
+}
+.load-pct {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--dim);
+    text-align: center;
+}
+
+/* ─── Navbar ─── */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 6%;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    backdrop-filter: blur(4px);
+}
+.logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+    font-weight: 400;
+    color: var(--gold-l);
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--gold-l); }
+.nav-cta {
+    border: 1px solid var(--gold) !important;
+    padding: 10px 22px;
+    color: var(--gold) !important;
+}
+.nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--dark) !important;
+}
+
+/* ─── Canvas ─── */
+.canvas-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+#scroll-canvas { width: 100%; height: 100%; display: block; }
+
+/* ─── Scroll Content ─── */
+.scroll-content { position: relative; z-index: 10; }
+
+/* ─── Panels ─── */
+.panel {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 6%;
+}
+
+/* Cinematic gradient overlay instead of solid card */
+.panel-text {
+    max-width: 480px;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 50px 45px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+}
+.panel-text.left  { margin-left: 0;    margin-right: auto; }
+.panel-text.right { margin-left: auto; margin-right: 0; }
+.panel-text.center {
+    margin: 0 auto;
+    text-align: center;
+    border-top: 2px solid var(--gold);
+}
+
+/* Hero gets a full cinematic vignette — no card needed */
+.panel-hero {
+    align-items: flex-end;
+    padding-bottom: 10vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+}
+.panel-hero .panel-text {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+    border-left: 2px solid var(--gold);
+    padding-left: 35px;
+}
+
+/* ─── Typography ─── */
+.eyebrow {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+h1 { font-size: 4.5rem; }
+h2 { font-size: 3.5rem; }
+h1 em, h2 em { font-style: italic; color: var(--gold-l); }
+.body-text {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--dim);
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ─── Scroll Cue ─── */
+.scroll-cue {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 50px;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dim);
+    font-family: 'Montserrat', sans-serif;
+}
+.cue-line {
+    flex: 1;
+    height: 1px;
+    background: var(--gold);
+    max-width: 60px;
+    animation: pulse-line 2s ease-in-out infinite;
+}
+@keyframes pulse-line {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+}
+
+/* ─── Hero Pill CTA ─── */
+.hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 14px 32px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(184, 151, 90, 0.4);
+    border-radius: 50px;
+    color: var(--gold-l);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+}
+.hero-pill:hover {
+    background: var(--gold);
+    color: var(--dark);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(184, 151, 90, 0.3);
+}
+.pill-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+.hero-pill:hover .pill-arrow {
+    transform: translateX(5px);
+}
+
+/* ─── CTA ─── */
+.cta-btn {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 18px 50px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+.cta-btn:hover { background: var(--gold); color: var(--dark); }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    .panel-text { padding: 30px 25px; }
+    .panel { padding: 0 4%; }
+}

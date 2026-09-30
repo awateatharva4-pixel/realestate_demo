@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier Estates — Luxury Real Estate</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Vite + Tailwind Entry -->
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="load-inner">
+            <p class="load-brand">PREMIER ESTATES</p>
+            <div class="load-bar-track"><div class="load-bar" id="load-bar"></div></div>
+            <p class="load-pct"><span id="load-progress">0</span>%</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">PREMIER ESTATES</div>
+        <ul class="nav-links">
+            <li><a href="#">Properties</a></li>
+            <li><a href="#">Developments</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#" class="nav-cta">Private Viewing</a></li>
+        </ul>
+    </nav>
+
+    <!-- Fixed Canvas Background -->
+    <div class="canvas-wrap">
+        <canvas id="scroll-canvas"></canvas>
+    </div>
+
+    <!-- Scrollable Content Overlay -->
+    <div class="scroll-content">
+
+        <!-- Hero Section -->
+        <section class="panel panel-hero">
+            <div class="panel-text left">
+                <span class="eyebrow">DUBAI · LONDON · MIAMI</span>
+                <h1>Step Inside<br><em>Perfection</em></h1>
+                <p class="body-text">Scroll to take a private tour through the most coveted residences in the world.</p>
+                <a href="#" class="hero-pill">Explore Residences <span class="pill-arrow">→</span></a>
+                <div class="scroll-cue">
+                    <span>Scroll</span>
+                    <div class="cue-line"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature 1 -->
+        <section class="panel panel-2">
+            <div class="panel-text right">
+                <span class="eyebrow">ARCHITECTURE</span>
+                <h2>Where Light<br>Meets Space</h2>
+                <p class="body-text">Every room is designed around natural light, creating a living experience that evolves beautifully with each hour of the day.</p>
+            </div>
+        </section>
+
+        <!-- Feature 2 -->
+        <section class="panel panel-3">
+            <div class="panel-text left">
+                <span class="eyebrow">INTERIOR DESIGN</span>
+                <h2>Crafted for<br>Those Who Notice</h2>
+                <p class="body-text">Hand-selected marble, custom millwork, and curated art installations — no detail has been left to chance.</p>
+            </div>
+        </section>
+
+        <!-- Feature 3 -->
+        <section class="panel panel-4">
+            <div class="panel-text right">
+                <span class="eyebrow">LIFESTYLE</span>
+                <h2>An Address<br>Above All Others</h2>
+                <p class="body-text">Private concierge, rooftop infinity pool, and direct access to the city's most exclusive social venues.</p>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="panel panel-cta">
+            <div class="panel-text center">
+                <span class="eyebrow">BY APPOINTMENT ONLY</span>
+                <h2>Begin Your<br>Journey</h2>
+                <p class="body-text">Fewer than 12 residences remain. Private viewings are available exclusively for qualified buyers.</p>
+                <a href="#" class="cta-btn">Request a Viewing</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
